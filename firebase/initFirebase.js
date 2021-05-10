@@ -15,4 +15,9 @@ const clientCredentials = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+export default function initFirebase() {
+  if (!firebase.apps.length) {
+    firebase.initializeApp(clientCredentials);
+    console.log("Firebase was successfully init");
+  }
+}
