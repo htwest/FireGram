@@ -24,6 +24,7 @@ const UploadForm = () => {
       <input type="file" onChange={changeHandler}></input>
       <div className="output">
         {error ? <div className="error">{error}</div> : null}
+        {file ? <div className="file">{file.name}</div> : null}
       </div>
     </form>
   );
