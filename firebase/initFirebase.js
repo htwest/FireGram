@@ -1,5 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
+import "firebase/storage";
 
 const clientCredentials = {
   // Your web app's Firebase configuration
@@ -13,9 +15,17 @@ const clientCredentials = {
 };
 
 // Initialize Firebase
-export default function initFirebase() {
-  if (!firebase.apps.length) {
-    firebase.initializeApp(clientCredentials);
-    console.log("Firebase was successfully init");
-  }
-}
+
+// export default function initFirebase() {
+//   if (!firebase.apps.length) {
+//     firebase.initializeApp(clientCredentials);
+//     console.log("Firebase was successfully init");
+//   }
+// }
+
+firebase.initializeApp(clientCredentials);
+
+const projectStorage = firebase.storage();
+const projectFirestore = firebase.firestore();
+
+export { projectStorage, projectFirestore };
