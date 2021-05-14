@@ -18,7 +18,8 @@ const clientCredentials = {
 if (!firebase.apps.length) {
   firebase.initializeApp(clientCredentials);
 } else {
-  firebase.app(); // if already initialized, use that one
+  // if already initialized, use that one
+  firebase.app();
 }
 
 const projectStorage = firebase.storage();
