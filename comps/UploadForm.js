@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Progressbar from "./ProgressBar";
+// import styles from "../styles/UploadForm.module.css";
 
 const UploadForm = () => {
   const [file, setFile] = useState(null);
@@ -22,8 +23,10 @@ const UploadForm = () => {
 
   return (
     <form>
-      <input type="file" onChange={changeHandler}></input>
-      <span>+</span>
+      <label>
+        <input type="file" onChange={changeHandler}></input>
+        <span>+</span>
+      </label>
       <div className="output">
         {error ? <div className="error">{error}</div> : null}
         {file ? <div className="file">{file.name}</div> : null}

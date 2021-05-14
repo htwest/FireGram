@@ -15,7 +15,11 @@ const clientCredentials = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(clientCredentials);
+if (!firebase.apps.length) {
+  firebase.initializeApp(clientCredentials);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
