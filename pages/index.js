@@ -3,8 +3,6 @@ import firebase from "../firebase/initFirebase";
 import UploadForm from "../comps/UploadForm";
 import ImageGrid from "../comps/ImageGrid";
 
-// firebase();
-
 export default function Home() {
   return (
     <div className="App">
