@@ -11,19 +11,22 @@ const useStorage = (file) => {
   const [url, setUrl] = useState(null);
 
   useEffect(() => {
-    // refrences
+    // Refrences
     const storageRef = projectStorage.ref(file.name);
     const collectionRef = projectFirestore.collection("images");
 
     storageRef.put(file).on(
       "state_changed",
+      // Snapshot of transfering file
       (snap) => {
         let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
         setProgress(percentage);
       },
+      // Runs if there is an error in upload
       (err) => {
         setError(err);
       },
+      // Runs when file transfer is complete
       async () => {
         const url = await storageRef.getDownloadURL();
         const createdAt = timestamp();
