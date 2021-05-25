@@ -6,6 +6,7 @@ const ProgressBar = ({ file, setFile }) => {
   const { url, progress } = useStorage(file);
   // console.log(progress, url);
 
+  // Once upload is complete (URL is received), set File back to null to remove progress bar from screen
   useEffect(() => {
     if (url) {
       setFile(null);

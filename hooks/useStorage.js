@@ -13,7 +13,7 @@ const useStorage = (file) => {
   useEffect(() => {
     // Creates a refrence of the selected file
     const storageRef = projectStorage.ref(file.name);
-    // Selects or Creates collection in firestore DB
+    // Refrences or Creates a collection in FireStoreDB
     const collectionRef = projectFirestore.collection("images");
 
     storageRef.put(file).on(
@@ -31,6 +31,8 @@ const useStorage = (file) => {
       async () => {
         const url = await storageRef.getDownloadURL();
         const createdAt = timestamp();
+
+        // Add properties to 'document' that is added to DB
         collectionRef.add({ url, createdAt });
         setUrl(url);
       }
