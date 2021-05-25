@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useStorage from "../hooks/useStorage";
 
 const ProgressBar = ({ file, setFile }) => {
+  // Begins File upload process
   const { url, progress } = useStorage(file);
   // console.log(progress, url);
 
@@ -11,6 +12,7 @@ const ProgressBar = ({ file, setFile }) => {
     }
   }, [url]);
 
+  // Component uses percenage amount from progress to adjust the length of the bar on screen
   return <div className="progress-bar" style={{ width: progress + "%" }}></div>;
 };
 

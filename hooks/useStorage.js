@@ -11,8 +11,9 @@ const useStorage = (file) => {
   const [url, setUrl] = useState(null);
 
   useEffect(() => {
-    // Refrences
+    // Creates a refrence of the selected file
     const storageRef = projectStorage.ref(file.name);
+    // Selects or Creates collection in firestore DB
     const collectionRef = projectFirestore.collection("images");
 
     storageRef.put(file).on(
