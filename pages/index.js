@@ -2,6 +2,7 @@ import Title from "../comps/Title";
 import firebase from "../firebase/initFirebase";
 import UploadForm from "../comps/UploadForm";
 import ImageGrid from "../comps/ImageGrid";
+import Modal from "../comps/Modal";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Title />
       <UploadForm />
       <ImageGrid />
+      <Modal />
     </div>
   );
 }
