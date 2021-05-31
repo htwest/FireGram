@@ -6,6 +6,7 @@ import ImageGrid from "../comps/ImageGrid";
 import Modal from "../comps/Modal";
 
 export default function Home() {
+  // Selected Image for Enlarged Modal
   const [selectedImg, setSelectedImg] = useState(null);
 
   return (
