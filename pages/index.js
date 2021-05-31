@@ -14,7 +14,7 @@ export default function Home() {
       <Title />
       <UploadForm />
       <ImageGrid setSelectedImg={setSelectedImg} />
-      <Modal selectedImg={selectedImg} />
+      {selectedImg ? <Modal selectedImg={selectedImg} /> : null}
     </div>
   );
 }
