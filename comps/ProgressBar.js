@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import useStorage from "../hooks/useStorage";
+import { motion } from "framer-motion";
 
 const ProgressBar = ({ file, setFile }) => {
   // Begins File upload process
@@ -13,8 +14,15 @@ const ProgressBar = ({ file, setFile }) => {
     }
   }, [url]);
 
-  // Component uses percenage amount from progress to adjust the length of the bar on screen
-  return <div className="progress-bar" style={{ width: progress + "%" }}></div>;
+  // This Component uses framer-motion to animate the loading bar, using percenage amount
+  // from progress to adjust the length of the bar on screen
+  return (
+    <motion.div
+      className="progress-bar"
+      initial={{ width: 0 }}
+      animate={{ width: progress + "%" }}
+    ></motion.div>
+  );
 };
 
 export default ProgressBar;

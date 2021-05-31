@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const Modal = ({ selectedImg, setSelectedImg }) => {
   // Handles Closing of Modal
   const handleClick = (e) => {
@@ -8,9 +10,21 @@ const Modal = ({ selectedImg, setSelectedImg }) => {
   };
 
   return (
-    <div className="backdrop" onClick={handleClick}>
-      <img src={selectedImg} alt="Enlarged Pic" />
-    </div>
+    // Declare motion.div to use framer-motion animations
+    <motion.div
+      className="backdrop"
+      onClick={handleClick}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <motion.img
+        src={selectedImg}
+        alt="Enlarged Pic"
+        // Creates drop down effect with animated positioning
+        initial={{ y: "-100vh" }}
+        animate={{ y: 0 }}
+      />
+    </motion.div>
   );
 };
 
