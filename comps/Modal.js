@@ -1,7 +1,10 @@
 const Modal = ({ selectedImg, setSelectedImg }) => {
   // Handles Closing of Modal
   const handleClick = (e) => {
-    setSelectedImg(null);
+    // Checks if click is on backdrop or on image
+    if (e.target.classList.contains("backdrop")) {
+      setSelectedImg(null);
+    }
   };
 
   return (
