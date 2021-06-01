@@ -1,6 +1,5 @@
-Instagram Like App
+FIREGRAM
 
-Powered by React and Next.js using Firebase as a backend database
-Uses Framer Motions package for animations
+This is an app meant to replicate Instagram like functionaliy by allowing a user to view and upload images.
 
-Prototype
+The App is built using Next.js, and uses Firebase as a back end database to store image files. Additional animations are provided by the Framer-Motions package.
